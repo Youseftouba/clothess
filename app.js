@@ -1,35 +1,43 @@
-let menuIcon = document.querySelector('#ber'); 
-let navbarCollapse = document.querySelector('.navbar-nav2'); 
-let closeIcon = document.querySelector('.close'); 
-let shop = document.querySelector('.shop'); 
-shop.addEventListener('click', function () {
-  window.open("file:///D:/Front%20end/projec2/Shop.html")
-});
-menuIcon.addEventListener('click', function () {
-    navbarCollapse.classList.toggle('active'); 
-});
+document.addEventListener('DOMContentLoaded', function () {
+  let menuIcon = document.querySelector('#ber'); 
+  let navbarCollapse = document.querySelector('.navbar-nav2'); 
+  let closeIcon = document.querySelector('.close'); 
+  let shop = document.querySelector('.shop'); 
+  let mainImg = document.getElementById("mainImg");
+  let smallImgs = document.querySelectorAll(".small-img-col img");
+  let shops = document.querySelectorAll(".shop-item");
+  if (shop) {
+      shop.addEventListener('click', function () {
+          window.open("Shop.html");
+      });
+  }
 
-if (closeIcon) {
-    closeIcon.addEventListener('click', function () {
-        navbarCollapse.classList.remove('active'); // إزالة كلاس "active" لإغلاق القائمة
-    });
-}
-  
+  if (menuIcon) {
+      menuIcon.addEventListener('click', function () {
+          navbarCollapse.classList.toggle('active'); 
+          console.log('Menu clicked!');
+      });
+  } else {
+      console.error('Menu icon (#ber) not found!');
+  }
 
+  if (closeIcon) {
+      closeIcon.addEventListener('click', function () {
+          navbarCollapse.classList.remove('active'); // إزالة كلاس "active" لإغلاق القائمة
+      });
+  };
 
-let shops = document.querySelectorAll(".shop-item");
-shops.forEach(function(shop) {
-  shop.addEventListener("click", function () {
-    window.open("file:///D:/Front%20end/projec2/suproduct.html","_blank");
+  shops.forEach(function(shop) {
+      shop.addEventListener("click", function () {
+          window.open("file:///D:/Front%20end/projec2/suproduct.html", "_blank");
+      });
   });
-});
 
-
-let mainImg = document.getElementById("mainImg");
-let smallImgs = document.querySelectorAll(".small-img-col img");
-
-smallImgs.forEach( function(img) {
-    img.addEventListener("click", function() {
-        mainImg.src = img.src;
-    });
+  if (mainImg && smallImgs) {
+      smallImgs.forEach(function(img) {
+          img.addEventListener("click", function () {
+              mainImg.src = img.src;
+          });
+      });
+  }
 });
