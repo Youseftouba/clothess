@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (closeIcon) {
       closeIcon.addEventListener('click', function () {
-          navbarCollapse.classList.remove('active'); // إزالة كلاس "active" لإغلاق القائمة
+          navbarCollapse.classList.remove('active'); 
       });
   };
 
