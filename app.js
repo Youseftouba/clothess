@@ -15,11 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (menuIcon) {
       menuIcon.addEventListener('click', function () {
           navbarCollapse.classList.toggle('active'); 
-          console.log('Menu clicked!');
       });
-  } else {
-      console.error('Menu icon (#ber) not found!');
-  }
+  } 
 
   if (closeIcon) {
       closeIcon.addEventListener('click', function () {
